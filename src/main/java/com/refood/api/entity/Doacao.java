@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class Doacao {
     @JoinColumn(name = "id_ong", nullable = false)
     private Ong ong;
 
-    private LocalDate dataDoacao = LocalDate.now();
+    private LocalDateTime dataDoacao = LocalDateTime.now();
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
